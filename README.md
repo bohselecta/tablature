@@ -2,7 +2,7 @@
 ## The Future of Hardware Music Production
 
 <div align="center">
-  <img src="public/logo.png" alt="tablature.io logo" width="200" height="200">
+  <img src="logo.png" alt="tablature.io logo" width="375" style="max-width: 375px; height: auto;">
   
   **Revolutionary Web-Based MIDI Control & AI-Assisted Music Creation**
   
