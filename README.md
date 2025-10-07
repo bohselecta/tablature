@@ -1,5 +1,9 @@
 # tablature.io - The Flawless DAWless Experience 🎹
 
+<div align="center">
+  <img src="logo.png" alt="tablature.io logo" width="200" />
+</div>
+
 > **Revolutionizing hardware music production with intelligent, genre-based control of MIDI devices**
 
 tablature.io is a desktop application that brings the power of algorithmic composition and intelligent device control to hardware grooveboxes and MIDI instruments. Built for musicians who love the tactile experience of hardware but want the creative possibilities of modern music production software.
