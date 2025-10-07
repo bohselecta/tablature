@@ -1,4 +1,8 @@
 // Global type definitions for the application
+import { StorageManager } from '../core/database/Database';
+
+// Export storage manager for use throughout the app
+export { StorageManager };
 
 export interface SoundData {
   id: string;
