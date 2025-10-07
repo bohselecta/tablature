@@ -1,0 +1,59 @@
+{
+  "genreName": "Techno",
+  "tempo": {
+    "min": 120,
+    "max": 140,
+    "default": 130
+  },
+  "timeSignature": "4/4",
+  "soundPalette": {
+    "kick": ["909_Kick", "Techno_Kick", "Punchy_Kick"],
+    "snare": ["909_Snare", "Techno_Snare", "Clap"],
+    "hihat": ["909_HH_Closed", "909_HH_Open", "909_HH_Pedal"],
+    "bass": ["Techno_Bass", "Sub_Bass", "Sine_Bass"],
+    "lead": ["Techno_Lead", "Saw_Lead", "Square_Lead"],
+    "pad": ["Techno_Pad", "Dark_Pad", "Atmospheric_Pad"]
+  },
+  "patterns": {
+    "kick": {
+      "four_on_floor": {
+        "steps": 16,
+        "pattern": [1,0,0,0, 1,0,0,0, 1,0,0,0, 1,0,0,0],
+        "velocity": [100,0,0,0, 100,0,0,0, 100,0,0,0, 100,0,0,0]
+      }
+    },
+    "snare": {
+      "backbeat": {
+        "steps": 16,
+        "pattern": [0,0,0,0, 1,0,0,0, 0,0,0,0, 1,0,0,0],
+        "velocity": [0,0,0,0, 100,0,0,0, 0,0,0,0, 100,0,0,0]
+      }
+    },
+    "hihat": {
+      "steady": {
+        "steps": 16,
+        "pattern": [1,0,1,0, 1,0,1,0, 1,0,1,0, 1,0,1,0],
+        "velocity": [70,0,70,0, 70,0,70,0, 70,0,70,0, 70,0,70,0]
+      }
+    }
+  },
+  "songStructure": {
+    "intro": {
+      "length": 16,
+      "tracks": ["hihat", "pad"],
+      "patterns": {
+        "hihat": "steady",
+        "pad": "sustained"
+      }
+    },
+    "main": {
+      "length": 32,
+      "tracks": ["kick", "snare", "hihat", "bass", "lead"],
+      "patterns": {
+        "kick": "four_on_floor",
+        "snare": "backbeat",
+        "hihat": "steady"
+      }
+    }
+  }
+}

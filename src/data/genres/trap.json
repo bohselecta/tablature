@@ -1,0 +1,59 @@
+{
+  "genreName": "Trap",
+  "tempo": {
+    "min": 130,
+    "max": 170,
+    "default": 140
+  },
+  "timeSignature": "4/4",
+  "soundPalette": {
+    "kick": ["808_Kick_01", "808_Kick_Deep", "Trap_Kick_Sub"],
+    "snare": ["Trap_Snare_01", "Trap_Clap", "Rim_Shot"],
+    "hihat": ["HH_Closed_Trap", "HH_Open_Trap", "HH_Roll"],
+    "bass": ["808_Bass_Long", "Sub_Bass", "Saw_Bass_Trap"],
+    "lead": ["Bell_Melodic", "Synth_Pluck", "Vocal_Chop"],
+    "pad": ["Dark_Pad", "String_Pad", "Atmospheric_Pad"]
+  },
+  "patterns": {
+    "kick": {
+      "basic": {
+        "steps": 16,
+        "pattern": [1,0,0,0, 0,0,1,0, 1,0,0,0, 0,0,1,0],
+        "velocity": [100,0,0,0, 0,0,95,0, 100,0,0,0, 0,0,95,0]
+      }
+    },
+    "snare": {
+      "basic": {
+        "steps": 16,
+        "pattern": [0,0,0,0, 1,0,0,0, 0,0,0,0, 1,0,0,0],
+        "velocity": [0,0,0,0, 100,0,0,0, 0,0,0,0, 100,0,0,0]
+      }
+    },
+    "hihat": {
+      "sixteenths": {
+        "steps": 16,
+        "pattern": [1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1],
+        "velocity": [80,70,80,70, 80,70,80,70, 80,70,80,70, 80,70,80,70]
+      }
+    }
+  },
+  "songStructure": {
+    "intro": {
+      "length": 8,
+      "tracks": ["hihat", "pad"],
+      "patterns": {
+        "hihat": "sixteenths",
+        "pad": "sustained"
+      }
+    },
+    "verse": {
+      "length": 16,
+      "tracks": ["kick", "snare", "hihat", "bass", "pad"],
+      "patterns": {
+        "kick": "basic",
+        "snare": "basic",
+        "hihat": "sixteenths"
+      }
+    }
+  }
+}

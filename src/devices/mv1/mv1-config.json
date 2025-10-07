@@ -1,0 +1,22 @@
+{
+  "deviceName": "Roland Verselab MV-1",
+  "manufacturer": "Roland",
+  "midiChannels": {
+    "kick": 1,
+    "snare": 2,
+    "hihat": 3,
+    "kit": 4,
+    "bass": 5,
+    "inst1": 6,
+    "inst2": 7
+  },
+  "maxClipsPerTrack": 8,
+  "maxTracks": 7,
+  "supportedEffects": [
+    "reverb",
+    "delay",
+    "chorus",
+    "distortion"
+  ],
+  "sysexHeader": [0xF0, 0x41, 0x10, 0x00, 0x00, 0x00, 0x6F, 0x12]
+}
