@@ -1,0 +1,112 @@
+{
+  "name": "House",
+  "description": "Classic house music with four-on-the-floor beats and soulful elements",
+  "tempo": {
+    "min": 120,
+    "max": 130,
+    "default": 125
+  },
+  "key": "C",
+  "scale": "major",
+  "tracks": [
+    {
+      "id": "kick",
+      "name": "Kick Drum",
+      "channel": 1,
+      "soundId": "kick-808",
+      "pattern": {
+        "length": 16,
+        "steps": [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+        "velocity": [127, 0, 0, 0, 127, 0, 0, 0, 127, 0, 0, 0, 127, 0, 0, 0]
+      }
+    },
+    {
+      "id": "snare",
+      "name": "Snare Drum",
+      "channel": 2,
+      "soundId": "snare-clap",
+      "pattern": {
+        "length": 16,
+        "steps": [0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0],
+        "velocity": [0, 0, 100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0, 100, 0]
+      }
+    },
+    {
+      "id": "hihat",
+      "name": "Hi-Hat",
+      "channel": 3,
+      "soundId": "hihat-closed",
+      "pattern": {
+        "length": 16,
+        "steps": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "velocity": [80, 60, 80, 60, 80, 60, 80, 60, 80, 60, 80, 60, 80, 60, 80, 60]
+      }
+    },
+    {
+      "id": "openhat",
+      "name": "Open Hi-Hat",
+      "channel": 4,
+      "soundId": "hihat-open",
+      "pattern": {
+        "length": 16,
+        "steps": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "velocity": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      }
+    },
+    {
+      "id": "bass",
+      "name": "Bass Line",
+      "channel": 5,
+      "soundId": "bass-synth",
+      "pattern": {
+        "length": 16,
+        "steps": [1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0],
+        "velocity": [100, 0, 0, 0, 100, 0, 100, 0, 0, 0, 100, 0, 0, 0, 100, 0]
+      }
+    },
+    {
+      "id": "lead",
+      "name": "Lead Synth",
+      "channel": 6,
+      "soundId": "lead-saw",
+      "pattern": {
+        "length": 16,
+        "steps": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "velocity": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      }
+    },
+    {
+      "id": "pad",
+      "name": "Pad",
+      "channel": 7,
+      "soundId": "pad-strings",
+      "pattern": {
+        "length": 16,
+        "steps": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "velocity": [90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      }
+    }
+  ],
+  "arrangement": {
+    "intro": {
+      "length": 8,
+      "tracks": ["kick", "hihat"]
+    },
+    "verse": {
+      "length": 16,
+      "tracks": ["kick", "snare", "hihat", "bass"]
+    },
+    "chorus": {
+      "length": 16,
+      "tracks": ["kick", "snare", "hihat", "bass", "lead"]
+    },
+    "bridge": {
+      "length": 8,
+      "tracks": ["kick", "hihat", "pad"]
+    },
+    "outro": {
+      "length": 8,
+      "tracks": ["hihat", "pad"]
+    }
+  }
+}
