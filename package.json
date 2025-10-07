@@ -1,32 +1,35 @@
 {
   "name": "tablature",
-  "description": "The flawless DAWless experience - intelligent MIDI control for hardware grooveboxes",
+  "description": "Revolutionary web-based MIDI control & AI-assisted music creation for hardware devices",
   "version": "1.0.0",
   "type": "module",
   "homepage": "https://tablature.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bohselecta/tablature.git"
+    "url": "https://github.com/bohselecta/tablature.git",
+    "private": true
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "bugs": {
-    "url": "https://github.com/bohselecta/tablature/issues"
+    "url": "https://tablature.io/support"
   },
   "keywords": [
     "midi",
-    "music",
-    "dawless",
-    "hardware",
-    "groovebox",
+    "music-production",
+    "web-midi",
+    "hardware-control",
+    "ai-composition",
     "roland-mv1",
-    "pattern-generator",
+    "pattern-generation",
     "algorithmic-music",
-    "electron-app"
+    "vocal-processing",
+    "auto-tune",
+    "commercial-software"
   ],
-  "author": "tablature.io team",
-  "license": "MIT",
+  "author": "tablature.io",
+  "license": "Commercial",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
