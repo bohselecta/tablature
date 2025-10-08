@@ -6,6 +6,7 @@ import { GenreSelector } from './renderer/components/GenreSelector';
 import { TrackView } from './renderer/components/TrackView';
 import { VocalRecording } from './renderer/components/VocalRecording';
 import { HelpModal } from './renderer/components/HelpModal';
+import { EmptyState } from './renderer/components/EmptyState';
 import { MV1Device } from './devices/mv1/MV1Device';
 import { GenreEngine, type GeneratedSong } from './core/pattern/GenreEngine';
 import { type MIDIDevice, MIDIManager } from './core/midi/MIDIManager';
@@ -397,6 +398,11 @@ function App() {
                 ✓ Ready to send MIDI commands
               </div>
             )}
+            {!connected && !connecting && availableDevices.length === 0 && (
+              <div className="text-xs text-gray-400 mt-1">
+                💡 Connect your MIDI device to get started
+              </div>
+            )}
           </div>
         </div>
 
@@ -488,13 +494,12 @@ function App() {
               <TrackView tracks={currentSong.tracks} />
             </>
           ) : (
-            <div className="flex items-center justify-center h-96">
-              <div className="text-center text-gray-500">
-                <div className="text-6xl mb-4">🎵</div>
-                <div className="text-xl mb-2">No song loaded</div>
-                <div className="text-sm">Select a genre to generate a song</div>
-              </div>
-            </div>
+            <EmptyState 
+              connected={connected}
+              hasDevices={availableDevices.length > 0}
+              onConnect={handleConnect}
+              onShowHelp={() => setShowHelp(true)}
+            />
           )}
         </div>
       </div>
