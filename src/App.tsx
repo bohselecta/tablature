@@ -5,6 +5,7 @@ import logoUrl from './assets/logo.png';
 import { GenreSelector } from './renderer/components/GenreSelector';
 import { TrackView } from './renderer/components/TrackView';
 import { VocalRecording } from './renderer/components/VocalRecording';
+import { HelpModal } from './renderer/components/HelpModal';
 import { MV1Device } from './devices/mv1/MV1Device';
 import { GenreEngine, type GeneratedSong } from './core/pattern/GenreEngine';
 import { type MIDIDevice, MIDIManager } from './core/midi/MIDIManager';
@@ -22,6 +23,7 @@ function App() {
   const [showVocalRecording, setShowVocalRecording] = useState(false);
   const [browserCompatibility, setBrowserCompatibility] = useState<any>(null);
   const [showSuccess, setShowSuccess] = useState<string | null>(null);
+  const [showHelp, setShowHelp] = useState(false);
   const [errorInfo, setErrorInfo] = useState<{
     title: string;
     description: string;
@@ -278,14 +280,26 @@ function App() {
         </div>
       )}
 
+      {/* Help Modal */}
+      <HelpModal isOpen={showHelp} onClose={() => setShowHelp(false)} />
+
       {/* Main App Content */}
       {/* Sidebar */}
       <div className="sidebar w-80 bg-gray-800 p-6 flex flex-col">
         <div className="flex items-center gap-4 mb-8">
           <img src={logoUrl} alt="tablature.io logo" className="w-16 h-16" style={{maxWidth: '375px', height: 'auto'}} />
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-            tablature.io
-          </h1>
+          <div className="flex-1">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              tablature.io
+            </h1>
+          </div>
+          <button
+            onClick={() => setShowHelp(true)}
+            className="p-2 text-gray-400 hover:text-white transition-colors"
+            title="Help & Setup Guide"
+          >
+            ❓
+          </button>
         </div>
 
         {/* Connection Section */}
@@ -393,7 +407,15 @@ function App() {
 
         {/* Footer */}
         <div className="mt-4 text-xs text-gray-500 text-center">
-          v1.0.0-alpha • tablature.io
+          <div className="mb-2">
+            <button
+              onClick={() => setShowHelp(true)}
+              className="text-blue-400 hover:text-blue-300 underline"
+            >
+              Help & Setup Guide
+            </button>
+          </div>
+          <div>v1.0.0-alpha • tablature.io</div>
         </div>
       </div>
 
