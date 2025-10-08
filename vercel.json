@@ -1,10 +1,12 @@
 {
+  "name": "flawless-dawless",
   "version": 2,
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "vite",
   "regions": ["iad1"],
+  "public": true,
   "headers": [
     {
       "source": "/(.*)",
@@ -54,6 +56,20 @@
     {
       "source": "/((?!assets|logo\\.png|manifest\\.json|vite\\.svg|audio-worklets).*)",
       "destination": "/index.html"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/logo.png",
+      "dest": "/logo.png"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/manifest.json"
+    },
+    {
+      "src": "/vite.svg",
+      "dest": "/vite.svg"
     }
   ]
 }
