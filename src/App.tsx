@@ -1,6 +1,7 @@
 // src/App.tsx - Updated with device selection
 
 import { useState, useEffect } from 'react';
+import logoUrl from './assets/logo.png';
 import { GenreSelector } from './renderer/components/GenreSelector';
 import { TrackView } from './renderer/components/TrackView';
 import { VocalRecording } from './renderer/components/VocalRecording';
@@ -281,7 +282,7 @@ function App() {
       {/* Sidebar */}
       <div className="sidebar w-80 bg-gray-800 p-6 flex flex-col">
         <div className="flex items-center gap-4 mb-8">
-          <img src="/logo.png" alt="tablature.io logo" className="w-16 h-16" style={{maxWidth: '375px', height: 'auto'}} />
+          <img src={logoUrl} alt="tablature.io logo" className="w-16 h-16" style={{maxWidth: '375px', height: 'auto'}} />
           <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
             tablature.io
           </h1>
