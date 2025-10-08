@@ -57,19 +57,5 @@
       "source": "/((?!assets|logo\\.png|manifest\\.json|vite\\.svg|audio-worklets).*)",
       "destination": "/index.html"
     }
-  ],
-  "routes": [
-    {
-      "src": "/logo.png",
-      "dest": "/logo.png"
-    },
-    {
-      "src": "/manifest.json",
-      "dest": "/manifest.json"
-    },
-    {
-      "src": "/vite.svg",
-      "dest": "/vite.svg"
-    }
   ]
 }
