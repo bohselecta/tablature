@@ -1,6 +1,6 @@
 # Live Canvas contract — 2026-10-15
 
-Goal: a usable preference-driven minimal-techno instrument around one MV-1, laptop and rotary mixer. Continue the existing repository, retain the old studio/data, and complete hardware-independent work. No public release in this pass.
+Goal: a usable preference-driven minimal-techno instrument around one MV-1, laptop and rotary mixer. Continue the existing repository, retain the old studio/data, and complete hardware-independent work. Public PR publication and merge were authorized on 2026-10-15; public hosting is not part of acceptance.
 
 | ID | Acceptance behavior |
 |---|---|
@@ -14,6 +14,8 @@ Goal: a usable preference-driven minimal-techno instrument around one MV-1, lapt
 | L8 | Desktop/mobile browser, keyboard/reduced-motion, error/recovery, meaningful tests |
 | L9 | Recovery audit, source provenance, capability distinctions, physical test log |
 
-Non-goals: native rewrite, proprietary project editing, unverified patch/MFX writes, full DAW/vocal-suite completion, arbitrary language understanding, paid APIs, hardware purchases, public deployment.
+Non-goals for the browser baseline: native rewrite, proprietary project editing, unverified patch/MFX writes, full DAW/vocal-suite completion, arbitrary language understanding, paid APIs, hardware purchases, public deployment.
 
 Hardware response, kit mapping, driver latency, mixer routing/cue, long-set stability, musical enjoyment and TikTok broadcast require external equipment/account work. Synthetic browser audio and fake ports cannot satisfy those gates.
+
+The next native appliance increment is governed by STATION_PLAN.md and CODING_PASS.md. Its native engine is planned; this does not change the evidence for the current browser implementation.

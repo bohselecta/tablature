@@ -25,6 +25,7 @@ export class AudioBridge {
     if (!Number.isFinite(bpm) || bpm < 60 || bpm > 180)
       throw Error("Capture tempo must be 60–180 BPM.");
     if (!deviceId) throw Error("Select the MV-1 audio input first.");
+    if (this.loop) throw Error("Stop the captured loop before recapturing.");
     if (this.cancel) throw Error("A loop capture is already in progress.");
     if (this.moduleContext !== ctx) {
       const url = URL.createObjectURL(

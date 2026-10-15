@@ -174,12 +174,23 @@ test("real Web Audio loop worklet and MediaRecorder with synthetic source", asyn
       );
       bridge.play(ctx, ctx.currentTime + 0.05);
       bridge.level(0.3);
+      let recaptureBlocked = false;
+      try {
+        await bridge.capture(ctx, "synthetic", ctx.currentTime + 0.3, 180);
+      } catch (error) {
+        recaptureBlocked = String(error).includes("Stop the captured loop");
+      }
+      const retainedBuffer = bridge.buffer;
       bridge.stopLoop();
+      const stoppedAndRetained =
+        bridge.loop === null && bridge.buffer === retainedBuffer;
       await bridge.record("synthetic");
       await new Promise((r) => setTimeout(r, 300));
       const take = await bridge.finishRecording();
       const wav = new DataView(await bridge.wav());
       return {
+        recaptureBlocked,
+        stoppedAndRetained,
         frames: b.length,
         rate: b.sampleRate,
         channels: b.numberOfChannels,
@@ -197,6 +208,8 @@ test("real Web Audio loop worklet and MediaRecorder with synthetic source", asyn
       navigator.mediaDevices.getUserMedia = original;
     }
   });
+  expect(result.recaptureBlocked).toBe(true);
+  expect(result.stoppedAndRetained).toBe(true);
   expect(result.frames).toBe(Math.round((result.rate * 960) / 180));
   expect(result.channels).toBe(2);
   expect(result.energy).toBe(true);
@@ -204,4 +217,76 @@ test("real Web Audio loop worklet and MediaRecorder with synthetic source", asyn
   expect(result.mime).toContain("audio");
   expect(result.wavRate).toBe(44100);
   expect(result.wavBits).toBe(16);
+});
+
+test("loop controls: stop retained source independently before recapture", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.evaluate(async () => {
+    // UI fixture only: capture completes immediately with a real silent buffer.
+    // Actual worklet capture is covered separately above.
+    const { AudioBridge } = await import("/src/core/live/AudioBridge.ts");
+    const { Instrument } = await import("/src/core/live/Instrument.ts");
+    // Isolate UI lifecycle from real-time scheduling, covered by the other journeys.
+    Instrument.prototype.start = async function () {
+      await this.audio();
+      this.running = true;
+      this.epoch = this.context!.currentTime;
+    };
+    AudioBridge.prototype.devices = async () => [
+      {
+        deviceId: "fixture-input",
+        kind: "audioinput",
+        label: "Fixture input",
+        groupId: "fixture",
+        toJSON: () => ({}),
+      },
+    ];
+    AudioBridge.prototype.capture = async function (
+      ctx: AudioContext,
+      _id: string,
+      _at: number,
+      bpm: number,
+    ) {
+      this.buffer = ctx.createBuffer(
+        2,
+        Math.round((ctx.sampleRate * 960) / bpm),
+        ctx.sampleRate,
+      );
+      this.captureBpm = bpm;
+      return this.buffer;
+    };
+  });
+  await page.getByRole("button", { name: "Connections & recording" }).click();
+  await page.getByRole("button", { name: "Find audio devices" }).click();
+  await page
+    .getByLabel("MV-1 loop input", { exact: true })
+    .selectOption("fixture-input");
+  await page.getByRole("button", { name: "Connections & recording" }).click();
+  await page.getByRole("button", { name: "Audition", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Capture 4 bars", exact: true })
+    .click();
+  await page.getByRole("button", { name: "▶ Loop", exact: true }).click();
+  await expect(
+    page.getByRole("button", { name: "Recapture 4 bars" }),
+  ).toBeDisabled();
+  await page.getByRole("button", { name: "■ Stop loop", exact: true }).click();
+  await expect(
+    page.getByRole("button", { name: "Audition", exact: true }),
+  ).toBeDisabled();
+  await expect(
+    page.getByRole("button", { name: "Save WAV", exact: true }),
+  ).toBeEnabled();
+  await expect(
+    page.getByRole("button", { name: "Recapture 4 bars" }),
+  ).toBeEnabled();
+  await page.getByRole("button", { name: "Recapture 4 bars" }).click();
+  await expect(page.getByRole("status")).toContainText(
+    "Four-bar loop captured",
+  );
+  await page.getByRole("button", { name: "▶ Loop", exact: true }).click();
+  await page.getByRole("button", { name: "■ Stop loop", exact: true }).click();
+  await page.getByRole("button", { name: "Stop all playback" }).click();
 });

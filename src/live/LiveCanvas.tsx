@@ -748,7 +748,9 @@ export function LiveCanvas() {
             </div>
             <div className="loop-controls">
               <button
-                disabled={!playing || capturing || !captureId || queued}
+                disabled={
+                  !playing || capturing || !captureId || queued || looping
+                }
                 onClick={capture}
               >
                 {capturing
@@ -758,9 +760,17 @@ export function LiveCanvas() {
                     : "Capture 4 bars"}
               </button>
               <button
-                disabled={!loopReady || !playing || looping}
+                disabled={!loopReady || !playing || capturing}
                 onClick={() =>
                   safe(async () => {
+                    if (looping) {
+                      bridge.stopLoop();
+                      setLooping(false);
+                      setMessage(
+                        "Captured loop stopped and retained. Recapture or restart it while the live groove keeps playing.",
+                      );
+                      return;
+                    }
                     bridge.play(engine.context!, engine.boundary());
                     setLooping(true);
                     setMessage(
@@ -769,7 +779,7 @@ export function LiveCanvas() {
                   })
                 }
               >
-                ▶ Loop
+                {looping ? "■ Stop loop" : "▶ Loop"}
               </button>
               <button
                 disabled={!loopReady}

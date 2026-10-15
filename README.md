@@ -4,6 +4,10 @@ A local-first performance instrument for Hayden's Roland VERSELAB MV-1, laptop a
 
 Recovered from `bohselecta/tablature` at `1a001b65c48f507e08a40a2a45a9600f7fdf7626`. Working branch: `codex/techno-mixing-station`. The recovered design provenance is described in docs. The original studio remains at `/?studio=legacy`; old storage keys and unrelated audio tools are preserved. See docs/RECOVERY_AUDIT.md for defects and limitations.
 
+## Dedicated station target
+
+The 2020 Intel MacBook Pro (8 GB) is dedicated to the MV-1/Vestax station, initially on macOS. The next increment is a native audio/MIDI appliance with this existing operator interface. Read [the locked station plan](docs/STATION_PLAN.md) and [coding pass](docs/CODING_PASS.md). These distinguish the working browser baseline from planned native capabilities.
+
 ## Open the packaged app
 
 Extract the ZIP, open a terminal in its folder, and run `python3 start.py` (Windows: `py start.py`). Python opens the included built app on localhost. Keep the terminal open; Ctrl+C stops the server. No API key or account required. For hardware use a desktop browser supporting Web MIDI. This is a local browser app, not a native Tauri executable.
@@ -33,7 +37,7 @@ MV-1 MIX OUT L/R → one Vestax stereo LINE channel. A captured laptop loop need
 
 1. Allow audio access in Connections. Select the actual MV-1 loop input and laptop loop output. Direct input monitoring is off. Avoid feeding the laptop return back into its own capture input.
 2. While the sequencer plays, **Capture 4 bars** records an exact frame count beginning on the next bar. **Loop** starts the captured audio at a bar boundary. Change live MV-1 parts and blend with the captured groove on your rotary mixer. Software audition and the loop share the chosen laptop output.
-3. Clear a retained loop before changing tempo. Physical MIDI/audio latency, drift and alignment require actual hardware measurement; this version does not automatically compensate round-trip latency or provide independent cue buses.
+3. Use **Stop loop** to stop the captured source without stopping the live sequencer or discarding the buffer. Stop the loop before recapturing. Clear a retained loop before changing tempo. Physical MIDI/audio latency, drift and alignment require actual hardware measurement; this version does not automatically compensate round-trip latency or provide independent cue buses.
 4. **Save WAV** exports captured audio as 44.1 kHz stereo PCM16. Select the actual mixer recording input, **Record mixer input**, then stop to download. Recording includes rotary moves only when the Vestax output is physically routed to that input. Browser recording uses its supported MediaRecorder format, typically WebM/Opus, not a lossless master.
 
 The mixer is the owner-confirmed Vestax PMC-250 with rotary controls. Interface outputs and physical routing remain unverified. Check existing equipment before buying anything. No TikTok account or live broadcast is configured.
