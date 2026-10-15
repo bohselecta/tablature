@@ -81,7 +81,7 @@ dist
 
 # Gatsby files
 .cache/
-public
+# Vite public assets are source files, not Gatsby build output.
 
 # Storybook build outputs
 .out
@@ -128,3 +128,7 @@ midi-test.log
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Local acceptance artifacts
+test-results/
+playwright-report/
