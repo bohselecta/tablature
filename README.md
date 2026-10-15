@@ -1,340 +1,55 @@
-# tablature.io
-## The Future of Hardware Music Production
-
-<div align="center">
-  <img src="logo.png" alt="tablature.io logo" width="375" style="max-width: 375px; height: auto;">
-  
-  **Revolutionary Web-Based MIDI Control & AI-Assisted Music Creation**
-  
-  [![Live Demo](https://img.shields.io/badge/Live%20Demo-Open%20Now-brightgreen?style=for-the-badge)](https://tablature.io)
-  [![License](https://img.shields.io/badge/License-Commercial-red?style=for-the-badge)](#commercial-license)
-  [![Web MIDI](https://img.shields.io/badge/Web%20MIDI-API%20Ready-blue?style=for-the-badge)](#web-midi-integration)
-</div>
-
----
-
-## 🎹 **What is tablature.io?**
-
-**tablature.io** is the world's first web application that provides **intelligent, genre-based control** of hardware MIDI devices through your browser. No downloads, no installations, no complex setup - just pure musical creativity powered by cutting-edge web technology.
-
-### **The Problem We Solve**
-
-Traditional music production requires:
-- ❌ **Expensive software** (Ableton Live, Logic Pro, FL Studio)
-- ❌ **Steep learning curves** (months to years of training)
-- ❌ **Complex workflows** (MIDI routing, device configuration)
-- ❌ **Hardware limitations** (one device = one workflow)
-
-**tablature.io changes everything:**
-- ✅ **Browser-based** - Works on any device, anywhere
-- ✅ **AI-powered** - Intelligent genre-based composition
-- ✅ **Hardware-first** - Controls real MIDI devices directly
-- ✅ **Instant creativity** - From idea to finished track in minutes
-
----
-
-## ✨ **Revolutionary Features**
-
-### 🎵 **Intelligent Genre Engine**
-- **AI-powered composition** - Generate complete songs from genre templates
-- **Real-time pattern generation** - Algorithmic creation of drum patterns, bass lines, melodies
-- **Smart arrangement** - Automatic song structure with intro, verse, chorus, breakdown
-- **Tempo & complexity control** - Customize generated music to your style
-
-### 🎛️ **Web MIDI Integration**
-- **Browser-based MIDI control** - First-of-its-kind web MIDI implementation
-- **Universal device support** - Works with any MIDI-compliant hardware
-- **Real-time parameter control** - Volume, pan, mute, effects for each track
-- **Pattern synchronization** - Send generated patterns directly to hardware
-
-### 🎹 **Roland MV-1 Mastery**
-- **Complete sound database** - 4,852+ Roland MV-1 sounds with perfect bank/program mapping
-- **Intelligent track mapping** - Automatic channel assignment (Kick=1, Snare=2, HiHat=3)
-- **Advanced SysEx support** - Deep MV-1 integration via System Exclusive messages
-- **Pattern recording** - Convert generated patterns to MV-1 clip slots
-
-### 🎤 **Professional Vocal Suite**
-- **Real-time pitch detection** - Advanced YIN algorithm for accurate pitch tracking
-- **Auto-tune processing** - Professional-grade pitch correction with formant preservation
-- **Karaoke-style guidance** - Visual pitch guide with reference tones
-- **Multi-take recording** - Professional recording workflow with monitoring
-
----
-
-## 🚀 **How It Works**
-
-### **Step 1: Connect Your Hardware**
-```
-1. Open tablature.io in your browser
-2. Connect your MIDI device (MV-1, Electribe, etc.)
-3. Select your device from the dropdown
-4. Click "Connect" - that's it!
-```
-
-### **Step 2: Generate Music**
-```
-1. Choose your genre (Trap, Techno, House, Hip-Hop, D&B)
-2. Click "Generate Song"
-3. Watch as AI creates complete arrangements
-4. Customize tempo, complexity, and style
-```
-
-### **Step 3: Control Your Hardware**
-```
-1. Click "Send to MV-1"
-2. Watch your hardware come alive
-3. Real-time parameter control
-4. Pattern synchronization
-```
-
-### **Step 4: Record Vocals**
-```
-1. Click "Record Vocals"
-2. Follow the pitch guide
-3. Auto-tune processing
-4. Professional results
-```
-
----
-
-## 🎯 **Supported Hardware**
-
-### **Primary Targets**
-- **Roland Verselab MV-1** - Complete integration with 4,852+ sounds
-- **Korg Electribe Series** - Pattern sending and parameter control
-- **Akai MPC Series** - USB MIDI and pattern synchronization
+# Techno Mixing Station
 
-### **Universal MIDI Support**
-- **Any MIDI device** - Works with all MIDI-compliant hardware
-- **USB MIDI interfaces** - Direct connection via USB
-- **Traditional 5-pin DIN** - Via MIDI interface
-
----
-
-## 💻 **Technical Innovation**
-
-### **Web MIDI API Implementation**
-- **First-of-its-kind** browser-based MIDI control
-- **Real-time communication** with hardware devices
-- **Cross-platform compatibility** - Works on macOS, Windows, Linux
-- **No drivers required** - Pure web technology
+A local-first performance instrument for Hayden's Roland VERSELAB MV-1, laptop and Vestax PMC-250 rotary mixer. Describe a groove, edit its traits, lock the parts you love, and change the rest while you play. The MV-1 supplies hardware sound; the computer supplies composition, sequencing, an inspectable tone recipe and an audio loop bridge.
 
-### **AI-Powered Composition**
-- **Genre templates** - Trap, Techno, House, Hip-Hop, D&B
-- **Pattern algorithms** - Intelligent drum and melody generation
-- **Song structure** - Automatic arrangement and progression
-- **Style adaptation** - Learn from your preferences
-
-### **Professional Audio Processing**
-- **Web Audio API** - Real-time audio processing
-- **Pitch detection** - Advanced YIN algorithm
-- **Auto-tune** - Professional-grade pitch correction
-- **Low latency** - <10ms monitoring latency
-
----
-
-## 🌐 **Browser Compatibility**
+Recovered from `bohselecta/tablature` at `1a001b65c48f507e08a40a2a45a9600f7fdf7626`. Working branch: `codex/techno-mixing-station`. The recovered design provenance is described in docs. The original studio remains at `/?studio=legacy`; old storage keys and unrelated audio tools are preserved. See docs/RECOVERY_AUDIT.md for defects and limitations.
 
-### **Fully Supported**
-- ✅ **Chrome 80+** - Complete feature support
-- ✅ **Firefox 75+** - Full MIDI and audio capabilities
-- ✅ **Safari 14+** - Web MIDI API support
-- ✅ **Edge 80+** - Full compatibility
-
-### **Mobile Support**
-- ✅ **iOS Safari** - Web MIDI API support
-- ✅ **Android Chrome** - Full feature set
-- ⚠️ **Mobile limitations** - MIDI requires USB OTG adapter
+## Dedicated station target
 
----
+The 2020 Intel MacBook Pro (8 GB) is dedicated to the MV-1/Vestax station, initially on macOS. The next increment is a native audio/MIDI appliance with this existing operator interface. Read [the locked station plan](docs/STATION_PLAN.md) and [coding pass](docs/CODING_PASS.md). These distinguish the working browser baseline from planned native capabilities.
 
-## 🎨 **User Experience**
+## Open the packaged app
 
-### **Professional Design**
-- **Studio-grade interface** - Dark theme optimized for music production
-- **Intuitive workflow** - Logical progression from idea to finished track
-- **Real-time feedback** - Visual indicators for all operations
-- **Accessibility** - Full keyboard navigation and screen reader support
+Extract the ZIP, open a terminal in its folder, and run `python3 start.py` (Windows: `py start.py`). Python opens the included built app on localhost. Keep the terminal open; Ctrl+C stops the server. No API key or account required. For hardware use a desktop browser supporting Web MIDI. This is a local browser app, not a native Tauri executable.
 
-### **Microinteractions**
-- **Smooth animations** - 200-300ms transitions
-- **Loading states** - Clear progress indicators
-- **Success celebrations** - Delightful feedback moments
-- **Error handling** - Helpful error messages with solutions
+For a source checkout: `npm ci`, then `npm run dev`. Rebuild packaged files with `npm run build`.
 
----
-
-## 📊 **Performance**
-
-### **Speed Benchmarks**
-- **App launch**: <2 seconds
-- **Pattern generation**: <1 second
-- **MIDI latency**: <10ms
-- **Audio processing**: Real-time
-
-### **Resource Usage**
-- **Memory**: ~150MB
-- **CPU**: <5% idle, 15% during generation
-- **Storage**: <50MB (browser cache)
-
----
+## First performance
 
-## 🏢 **Commercial License**
-
-**tablature.io** is a **commercial product** with proprietary technology and intellectual property.
-
-### **License Types**
-
-#### **Individual License** - $99
-- ✅ Personal use
-- ✅ Commercial projects
-- ✅ Lifetime updates
-- ✅ Email support
-
-#### **Studio License** - $299
-- ✅ Up to 5 users
-- ✅ Commercial projects
-- ✅ Priority support
-- ✅ Custom integrations
-
-#### **Enterprise License** - $999
-- ✅ Unlimited users
-- ✅ White-label options
-- ✅ API access
-- ✅ Dedicated support
+1. Edit your idea, press **Shape the draft**, inspect the seven lanes, then **Apply draft** and **Audition**. Software audition uses simple local synths; it is not MV-1 audio.
+2. Lock a lane with its Hold circle. Change density, pocket, tone or room. **Evolve unlocked parts** generates new original material around protected lanes. **Apply at next bar** performs the change; **Undo** restores a previous applied plan. Part mute buttons apply the visible draft directly at the next bar.
+3. **Remember this feel** stores your explicit taste settings in this browser; **Recall** uses them in a new draft. This is preference recall, not an online learned model or automatic observation of your taste.
+4. **Save here** persists the current draft. Export/import JSON makes it portable and validates before application. Import leaves the active groove untouched. **Export MIDI** contains the current four-bar pattern. **Export selected clip** contains only the selected lane for manual MV-1 import. Copy it into `ROLAND/MV/MIDI` on the SD card, then use the device's IMPORT MIDI operation in the destination track/section (firmware 1.80+). Patch choice remains manual.
 
-### **What's Included**
-- ✅ **Complete source code**
-- ✅ **Web MIDI implementation**
-- ✅ **AI composition engine**
-- ✅ **Vocal processing suite**
-- ✅ **All genre templates**
-- ✅ **Hardware integrations**
-- ✅ **Documentation**
-- ✅ **Support**
-
----
+The local composer understands a small vocabulary: sparse/dense, dry/dubby, warm/bright, straight/shuffled and explicit BPM. Unfamiliar references are not semantically understood. External AI can author the same validated plan JSON; no runtime cloud model/provider was connected or billed. Seeded variations are reproducible.
 
-## 🚀 **Getting Started**
-
-### **Free Trial**
-1. Visit [tablature.io](https://tablature.io)
-2. Connect your MIDI device
-3. Generate your first track
-4. Experience the future of music production
+## Play the MV-1
 
-### **Purchase License**
-1. Choose your license type
-2. Complete secure payment
-3. Receive instant access
-4. Start creating immediately
-
----
-
-## 🎵 **Success Stories**
-
-> *"tablature.io completely changed how I approach music production. I can go from idea to finished track in 30 minutes instead of hours."*
-> 
-> **- Marcus Johnson, Producer**
-
-> *"The Web MIDI integration is incredible. I can control my MV-1 from anywhere, on any device."*
-> 
-> **- Sarah Chen, Electronic Musician**
-
-> *"Finally, a tool that understands both hardware and software. The AI composition is surprisingly musical."*
-> 
-> **- David Rodriguez, Composer**
-
----
-
-## 🔮 **Roadmap**
-
-### **Q1 2025**
-- ✅ Web MIDI API implementation
-- ✅ MV-1 integration
-- ✅ Basic genre templates
-- ✅ Vocal recording suite
-
-### **Q2 2025**
-- 🚧 Advanced AI composition
-- 🚧 Multi-device support
-- 🚧 Cloud project sync
-- 🚧 Mobile app
-
-### **Q3 2025**
-- 🔮 Collaborative features
-- 🔮 Marketplace integration
-- 🔮 Advanced mixing tools
-- 🔮 Plugin support
-
-### **Q4 2025**
-- 🔮 AI lyric generation
-- 🔮 Mastering suite
-- 🔮 Live performance mode
-- 🔮 Hardware expansion
-
----
-
-## 📞 **Support & Contact**
-
-### **Technical Support**
-- 📧 **Email**: support@tablature.io
-- 💬 **Live Chat**: Available on website
-- 📚 **Documentation**: Comprehensive guides
-- 🎥 **Video Tutorials**: Step-by-step guides
-
-### **Business Inquiries**
-- 📧 **Email**: business@tablature.io
-- 🤝 **Partnerships**: Enterprise solutions
-- 📺 **Media**: Press inquiries
-- 🎤 **Speaking**: Conference appearances
-
----
-
-## 🏆 **Awards & Recognition**
-
-- 🥇 **Best Music Tech Innovation 2024** - MusicTech Awards
-- 🥇 **Web Audio Excellence** - Web Audio Conference
-- 🥇 **Developer Choice** - GitHub Awards
-- 🥇 **User Experience** - UX Design Awards
-
----
-
-## 🌟 **Why tablature.io?**
-
-### **For Musicians**
-- **Instant creativity** - No learning curve
-- **Professional results** - Studio-quality output
-- **Hardware integration** - Best of both worlds
-- **Affordable** - Fraction of traditional software cost
-
-### **For Producers**
-- **Time savings** - 10x faster workflow
-- **Creative freedom** - AI-assisted composition
-- **Professional tools** - Auto-tune, pitch correction
-- **Scalable** - From bedroom to studio
-
-### **For Developers**
-- **Cutting-edge tech** - Web MIDI API implementation
-- **Clean architecture** - Modern React/TypeScript
-- **Extensible** - Easy to add new features
-- **Open source** - With commercial license
-
----
-
-<div align="center">
-  <h2>Ready to Revolutionize Your Music Production?</h2>
-  
-  [![Get Started Now](https://img.shields.io/badge/Get%20Started%20Now-Open%20tablature.io-brightgreen?style=for-the-badge&logo=chrome)](https://tablature.io)
-  
-  **The future of music production is here.**
-  
-  *tablature.io - Where hardware meets intelligence.*
-</div>
-
----
-
-<div align="center">
-  <p><strong>© 2025 tablature.io. All rights reserved.</strong></p>
-  <p>Proprietary technology. Commercial license required for use.</p>
-</div>
+Open **Connections & recording → Find MIDI outputs** and explicitly select the output. Connection sends no automatic note, patch change or SysEx. Choose patches on the MV-1, check receive channels/Auto Channel, and stop its internal transport to avoid duplicated sequences. Defaults: channels 1–7 for KICK through INST2; mapping and note offsets are editable.
+
+Switch destination to **MV-1 hardware · MIDI**. Inspect the command plan before playing. Notes send during playback. CC7 level, CC74 cutoff and CC91 reverb send only when **Include documented tone controls** is enabled. Official documentation establishes support, not a passed test on Hayden's unit. Patch selection, internal clip writing and deep SysEx transmission are blocked. Community packets compile with proper checksums for inspection only.
+
+The inherited 4,852-row sound catalogue remains a reference, not a verified patch-address database. Source suggestions are selected manually on the hardware.
+
+## Mix the hardware against its previous self
+
+MV-1 MIX OUT L/R → one Vestax stereo LINE channel. A captured laptop loop needs a separate stereo output → another Vestax LINE channel. The MV-1's stereo analog output does not become seven separate physical outputs.
+
+1. Allow audio access in Connections. Select the actual MV-1 loop input and laptop loop output. Direct input monitoring is off. Avoid feeding the laptop return back into its own capture input.
+2. While the sequencer plays, **Capture 4 bars** records an exact frame count beginning on the next bar. **Loop** starts the captured audio at a bar boundary. Change live MV-1 parts and blend with the captured groove on your rotary mixer. Software audition and the loop share the chosen laptop output.
+3. Use **Stop loop** to stop the captured source without stopping the live sequencer or discarding the buffer. Stop the loop before recapturing. Clear a retained loop before changing tempo. Physical MIDI/audio latency, drift and alignment require actual hardware measurement; this version does not automatically compensate round-trip latency or provide independent cue buses.
+4. **Save WAV** exports captured audio as 44.1 kHz stereo PCM16. Select the actual mixer recording input, **Record mixer input**, then stop to download. Recording includes rotary moves only when the Vestax output is physically routed to that input. Browser recording uses its supported MediaRecorder format, typically WebM/Opus, not a lossless master.
+
+The mixer is the owner-confirmed Vestax PMC-250 with rotary controls. Interface outputs and physical routing remain unverified. Check existing equipment before buying anything. No TikTok account or live broadcast is configured.
+
+## Checks and recovery
+
+`npm test` runs core checks. `npm run build` typechecks/builds. `npm run test:browser` starts its dev server and runs browser acceptance. Test configuration accepts `FD_CHROMIUM_PATH`; otherwise it uses bundled Chromium. Synthetic oscillator audio and mocked MIDI ports are explicitly test fixtures, not hardware evidence.
+
+Keep the performance tab visible: hiding it stops playback and loops to avoid timing bursts. Stop clears scheduled MIDI and releases tracked notes where supported. Mixer recording is independent; stop it explicitly to download a take. Unplug may require stopping the physical device manually. Exported change logs include MIDI sends labeled without device acknowledgement.
+
+See docs/STATUS.md, docs/LIVE_CONTRACT.md, docs/RECOVERY_AUDIT.md and docs/HARDWARE_TEST_LOG.md.
+
+## The groove conservatory
+
+The visual direction is a New Orleans daiquiri factory inside a forest moon base: cream enamel housings, polished metal, citrus and coral controls, and a cypress observatory panorama. See docs/VISUAL_DIRECTION.md for the generated asset and integration details.
